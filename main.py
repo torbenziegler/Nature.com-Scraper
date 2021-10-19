@@ -25,7 +25,7 @@ def get_article(url, current_page, search_term):
                     try:
                         file.write(article_body.text)
                         file.close()
-                        print("File created: " + article_title)
+                        print(f"File created: {article_title}.txt")
                     except AttributeError:
                         print("Article can't be accessed.")
 
@@ -42,4 +42,4 @@ def crawl(pages, search_term):
         get_article(target_url, page, search_term)
 
 
-crawl(int(input("Enter page amount:")), input("Enter article type:"))
+crawl(int(input("Enter page amount: ")), input("Enter article type: "))
